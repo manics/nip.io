@@ -163,7 +163,7 @@ class DynamicBackend:
             config.read_file(fp)
 
         self.id = os.getenv("NIPIO_SOA_ID", config.get("soa", "id"))
-        self.soa = "%s %s %s" % (
+        self.soa = "%s %s %s 10800 3600 604800 3600" % (
             _resolve_configuration("NIPIO_SOA_NS", config, "soa", "ns"),
             _resolve_configuration("NIPIO_SOA_HOSTMASTER", config, "soa", "hostmaster"),
             self.id,
